@@ -3,21 +3,28 @@
 	<head>
 		<title>Umbrella</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
 	</head>
 	<body>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				submit();
+    		});
+		</script>
 		<div id="bg">
 			<img src="Umbrella-Logo.png" id="logo">
 		<div id="container">
-		<form action="test.php" method="POST" class="basic-grey">
+		<form action="#" class="basic-grey">
 			<h1>Umbrella Course Search</h1>
 			<label>
 			<span>Keyword:</span>
-			<input type="text" name ="keyword">
+			<input type="text" name="keyword" id="keyword">
 			</label>
 			
 			<label>
 			<span>Level:</span> 
-			<select>
+			<select id="level">
 				<option value = "beginner"> Beginner </option>
 				<option value = "intermediate"> Intermediate </option>
 				<option value = "advanced"> Advanced </option>
@@ -28,21 +35,16 @@
 				<span>Time Commitment:</span>
 				<table><tr><td><input type="range" min="1" max = "12" value="1" onchange="inputValue(this.value)" id="timeslider"></td>
 				<td><span id="range"> 1 </span></td></tr></table>
-				<script type="text/javascript">
-					function inputValue (newValue)
-					{
-						document.getElementById("range").innerHTML=newValue;
-					} 
-				</script>
 			</label>
 			<br><br>
 			<label>
 				<span>&nbsp;</span>
-				<input type="button" class="button" value="Submit">
+				<input type="button" class="button" id="submit" value="Submit">
 			</label>
 		</form>
 		</div>
 
 		</div>
+		
 	</body>
 </html>
