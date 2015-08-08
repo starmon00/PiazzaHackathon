@@ -7,9 +7,14 @@ function submit() {
 
 	$('#submit').click(function() {
 		var key = $("#keyword").val();
-		var level = $("#level option:selected" ).text();
-		var time = $("#range").text();
-		window.location = 'searchResult.html?key=' + key +  '&level=' + $.trim(level)  + '&time=' + time;		
+		
+		if (key == '') {
+			alert('Please enter a keyword to search for!');
+		} else {
+			var level = $("#level option:selected" ).text();
+			var time = $("#range").text();
+			window.location = 'searchResult.html?key=' + key +  '&level=' + $.trim(level)  + '&time=' + time;	
+		}	
 	});
 	
 }
