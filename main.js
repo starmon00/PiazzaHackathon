@@ -10,6 +10,5 @@ function run() {
 			$("body").append(div);
 		
 		});
-		
 	});
 }
