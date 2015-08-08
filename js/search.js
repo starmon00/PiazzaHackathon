@@ -20,42 +20,48 @@ function post() {
 	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours_week: getURLParameter('hours')}, function( data ) {
 
 		var parseddata = jQuery.parseJSON(data);
-		//Create Table
-		var table = '<table id="results"><tr><th>Course</th><th>Description</th><th>Hours</th></tr>';
-
-		$.each(parseddata, function( index, value ) {
-			//Create Row
-			//Fill Row with Data
-			//Append to Table			
-			
-			var photo = "<img src='" + value['photo'] + "' width='300px'>'";
-			var service = value['service'];
-			
-			if (service == 'udacity'){
-				service = "<img src= 'images/udacity.jpg' height='50px'>'";
-			}
-
-			else if (service == 'coursera') {
-				service = "<img src= 'images/coursera2.jpg' width='50px'>'";
-			}
-			
-			var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
-			
-			var name = '<h2>'+value['name'] + "</h2>";
-			var shortDescription = value['description'];
-			
-			var tablecell2 = '<td>' + name + ' ' + shortDescription + '</td>';
-			
-			var estimatedClassWorkload = value['workload'];
-			
-			var tablecell3 = '<td>' + estimatedClassWorkload + '</td></tr>';
-
-			table = table.concat(tablecell1, tablecell2, tablecell3);
 		
-		});
+		if (parseddata.length == 0) {
+			$('body').append("<table><tr><th>Course</th><th>Description</th><th>Hours</th></tr><tr><td colspan='3'><i>Sorry, no search results found.</i></td></tr></table>");
+		} else {
+		
+			//Create Table
+			var table = '<table id="results"><tr><th>Course</th><th>Description</th><th>Hours</th></tr>';
 
-		table=table.concat('</table>');
-		$("body").append(table);
+			$.each(parseddata, function( index, value ) {
+				//Create Row
+				//Fill Row with Data
+				//Append to Table			
+			
+				var photo = "<img src='" + value['photo'] + "' width='300px'>'";
+				var service = value['service'];
+			
+				if (service == 'udacity'){
+					service = "<img src= 'images/udacity.jpg' height='50px'>'";
+				}
+
+				else if (service == 'coursera') {
+					service = "<img src= 'images/coursera2.jpg' width='50px'>'";
+				}
+			
+				var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
+			
+				var name = '<h2>'+value['name'] + "</h2>";
+				var shortDescription = value['description'];
+			
+				var tablecell2 = '<td>' + name + ' ' + shortDescription + '</td>';
+			
+				var estimatedClassWorkload = value['workload'];
+			
+				var tablecell3 = '<td>' + estimatedClassWorkload + '</td></tr>';
+
+				table = table.concat(tablecell1, tablecell2, tablecell3);
+		
+			});
+
+			table=table.concat('</table>');
+			$("body").append(table);
+		}
 	});
 }
 
