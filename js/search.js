@@ -26,7 +26,7 @@ function run() {
 		
 
 		//Create Table
-		var table = '<table id="results">';
+		var table = '<table id="results"><tr><th>Course</th><th>Description</th><th>Hours</th></tr>';
 
 		$.each(data, function( index, value ) {
 			//Create Row
