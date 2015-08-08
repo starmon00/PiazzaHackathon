@@ -4,6 +4,9 @@ html {
 
 body {
 	width:100%;
+    background: url(background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 #timeslider {
