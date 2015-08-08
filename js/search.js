@@ -1,4 +1,4 @@
-function getUrlParameter(sParam) {
+function getURLParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
@@ -15,8 +15,9 @@ function getUrlParameter(sParam) {
 
 function post() {
 	//replace var json = xxx with the below code later
-	$.post( "url.html", { keyword: getURLParameter('key'), level: getURLParameter('level'), hours: getURLParameter('hours')}, function( data ) {
-		//table data goes here
+	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours: getURLParameter('hours')}, function( data ) {
+
+		console.log(data);
 	});
 }
 
