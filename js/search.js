@@ -17,7 +17,7 @@ function post() {
 	var key = getURLParameter('key');
 	console.log(key);
 	//replace var json = xxx with the below code later
-	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours: getURLParameter('hours')}, function( data ) {
+	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours_week: getURLParameter('hours')}, function( data ) {
 
 		var parseddata = jQuery.parseJSON(data);
 		//Create Table
