@@ -16,8 +16,18 @@
 				<option value = "intermediate"> Intermediate </option>
 				<option value = "advance"> Advance </option>
 			</select>
-			<input type="sumbit" name="Submit">
-		<form>
+			<br>
+			<input type="range" min="1" max = "12" onchange="">
+			<br>
+			<script type="text/javascript">
+				function inputValue (newValue)
+				{
+					document.getElementById("range").innerHTML=newValue;
+				} 
+			</script>
+			<br>
+			<input type="submit" name="Submit">
+		</form>
 
 	</body>
 </html>
