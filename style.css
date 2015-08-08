@@ -26,6 +26,17 @@ head{
 	width:200px;
 }
 
+/* Results Table */
+
+#results {
+	
+	width:800px;
+	margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+	
+}
+
 /* Basic Grey */
 .basic-grey {
     margin-left:auto;
