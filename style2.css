@@ -10,6 +10,11 @@ head{
     color:orange;
 }
 
+h1 {
+	font-family: arial, helvetica, sans-serif;
+	text-align:center;
+}
+
 table a:link {
 	color: #666;
 	font-weight: bold;
