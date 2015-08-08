@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Umbrella</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
@@ -31,6 +32,14 @@
 					{
 						document.getElementById("range").innerHTML=newValue;
 					} 
+					
+			        $(document).ready(function() {
+			            $("#but").click(function() {
+			                var n = $(this).attr("n");
+			                alert(n);
+			            });
+			        });
+					
 				</script>
 			</label>
 			<br><br>
