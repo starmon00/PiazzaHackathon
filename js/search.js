@@ -26,11 +26,7 @@ function run() {
 		
 
 		//Create Table
-		var table = $('<table>');
-		$("body").append(table);
-
-
-
+		var table = '<table id="results">';
 
 		$.each(data, function( index, value ) {
 			//Create Row
@@ -42,32 +38,26 @@ function run() {
 		  	var div = $("<div>" +  "<img src='" + value['photo'] + "'>' <br>" + value['name'] + "<br> " + value['estimatedClassWorkload'] 
 		  		+ "<br> " + value['service'] + " <br> " + value['shortName'] + " <br> " + value['shortDescription'] + "<br><br></div>");
 			*/
-			$("body").append('<tr>');
 
+			var photo = "<img src='" + value['photo'] + "' width='300px'>'";
+			var service = value['service'];
+			
+			var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
+			
+			var name = '<h2>'+value['name'] + "</h2>";
+			var shortDescription = value['shortDescription'];
+			
+			var tablecell2 = '<td>' + name + ' ' + shortDescription + '</td>';
+			
+			var estimatedClassWorkload = value['estimatedClassWorkload'];
+			
+			var tablecell3 = '<td>' + estimatedClassWorkload + '</td></tr>';
 
-			var photo = $("<img src='" + value['photo'] + "'>'");
-			var service = $(value['service']);
-
-			$("body").append('<td>' + photo + ' ' + service + '</td>');
-
-
-			var name = $(value['name'] + "<br>");
-			var shortDescription = $(value['shortDescription']);
-
-			$("body").append('<td>' + name + ' ' + shortDescription + '</td>');
-
-
-
-			var estimatedClassWorkload = $(value['estimatedClassWorkload']);
-
-			$("body").append('<td>' + estimatedClassWorkload + '</td>');
-
-
-			$("body").append('</tr>');
-
+			table = table.concat(tablecell1, tablecell2, tablecell3);
 		
 		});
 
-		$("body").append('</table>');
+		table=table.concat('</table>');
+		$("body").append(table);
 	});
 }
