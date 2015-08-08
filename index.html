@@ -6,27 +6,38 @@
 	</head>
 	<body>
 		<div id="container">
-		<form action="test.php" method="POST">
-			Keyword: <input type="text" name ="keyword">
-			<br>
-			Level: 
+		<form action="test.php" method="POST" class="basic-grey">
+			<h1>Umbrella Course Search</h1>
+			<label>
+			<span>Keyword:</span>
+			<input type="text" name ="keyword">
+			</label>
+			
+			<label>
+			<span>Level:</span> 
 			<select>
 				<option value = "beginner"> Beginner </option>
 				<option value = "intermediate"> Intermediate </option>
-				<option value = "advance"> Advance </option>
+				<option value = "advanced"> Advanced </option>
 			</select>
-			<br>
-			<input type="range" min="1" max = "12" value="1" onchange="inputValue(this.value)">
-			<span id="range"> 1 </span>
-			<br>
-			<script type="text/javascript">
-				function inputValue (newValue)
-				{
-					document.getElementById("range").innerHTML=newValue;
-				} 
-			</script>
-			<br>
-			<input type="submit" name="Submit">
+			</label>
+			
+			<label>
+				<span>Time Commitment:</span>
+				<table><tr><td><input type="range" min="1" max = "12" value="1" onchange="inputValue(this.value)" id="timeslider"></td>
+				<td><span id="range"> 1 </span></td></tr></table>
+				<script type="text/javascript">
+					function inputValue (newValue)
+					{
+						document.getElementById("range").innerHTML=newValue;
+					} 
+				</script>
+			</label>
+			<br><br>
+			<label>
+				<span>&nbsp;</span>
+				<input type="button" class="button" value="Submit">
+			</label>
 		</form>
 		</div>
 
