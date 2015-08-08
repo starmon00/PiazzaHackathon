@@ -16,7 +16,8 @@
 				<option value = "advance"> Advance </option>
 			</select>
 			<br>
-			<input type="range" min="1" max = "12" onchange="">
+			<input type="range" min="1" max = "12" value="1" onchange="inputValue(this.value)">
+			<span id="range"> 1 </span>
 			<br>
 			<script type="text/javascript">
 				function inputValue (newValue)
