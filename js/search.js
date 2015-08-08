@@ -1,3 +1,25 @@
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+function post() {
+	//replace var json = xxx with the below code later
+	$.post( "url.html", { keyword: getURLParameter('key'), level: getURLParameter('level'), hours: getURLParameter('hours')}, function( data ) {
+		//table data goes here
+	});
+}
+
 function run() {
 	var json = $.getJSON('http://a.ashwinikhare.in:6060/getCourses', function(data){
 		if (window.console) console.log(data);		

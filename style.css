@@ -4,7 +4,7 @@ html {
 
 body {
 	width:100%;
-    background: url(background.jpg);
+    background: url(images/background.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -43,7 +43,7 @@ head{
     padding: 0px 0px 10px 40px;
     display: block;
     border-bottom:1px solid #E4E4E4;
-    margin: -10px -15px 30px -10px;;
+    margin: -10px -15px 30px -10px;
     color: #888;
 }
 .basic-grey h1>span {
@@ -82,8 +82,8 @@ head{
     padding: 5px 3px 3px 5px;
 }
 .basic-grey select {
-    background: #FFF url('down-arrow.png') no-repeat right;
-    background: #FFF url('down-arrow.png') no-repeat right);
+    background: #FFF url('images/down-arrow.png') no-repeat right;
+    background: #FFF url('images/down-arrow.png') no-repeat right;
     appearance:none;
     -webkit-appearance:none; 
     -moz-appearance: none;
