@@ -108,7 +108,7 @@ head{
     height:100px;
 }
 .basic-grey .button {
-    background: #E27575;
+    background: orange;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #FFF;
@@ -118,5 +118,5 @@ head{
     cursor: pointer;
 }
 .basic-grey .button:hover {
-    background: #CF7A7A
+    background: #EE7600
 }
