@@ -1,0 +1,24 @@
+html {
+    width:100%;
+}
+
+body {
+    width:100%;
+}
+
+head{
+    color:orange;
+}
+
+table{
+    background:grey;
+}
+
+#results {
+    
+    width:800px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    
+}
