@@ -1,4 +1,4 @@
-function getURLParameter(sParam) {
+var getURLParameter = function getURLParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
@@ -14,51 +14,39 @@ function getURLParameter(sParam) {
 };
 
 function post() {
+	var key = getURLParameter('key');
+	console.log(key);
 	//replace var json = xxx with the below code later
 	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours: getURLParameter('hours')}, function( data ) {
 
-		console.log(data);
-	});
-}
-
-function run() {
-	var json = $.getJSON('http://a.ashwinikhare.in:6060/getCourses', function(data){
-		if (window.console) console.log(data);		
-		
-
+		var parseddata = jQuery.parseJSON(data);
 		//Create Table
 		var table = '<table id="results"><tr><th>Course</th><th>Description</th><th>Hours</th></tr>';
 
-		$.each(data, function( index, value ) {
+		$.each(parseddata, function( index, value ) {
 			//Create Row
 			//Fill Row with Data
-			//Append to Table
-			if (window.console) console.log(value['estimatedClassWorkload']);		
+			//Append to Table			
 			
-			/*
-		  	var div = $("<div>" +  "<img src='" + value['photo'] + "'>' <br>" + value['name'] + "<br> " + value['estimatedClassWorkload'] 
-		  		+ "<br> " + value['service'] + " <br> " + value['shortName'] + " <br> " + value['shortDescription'] + "<br><br></div>");
-			*/
-
 			var photo = "<img src='" + value['photo'] + "' width='300px'>'";
 			var service = value['service'];
 			
 			if (service == 'udacity'){
-				service = "<img src= 'images/udacity.jpg' width='100px'>'";
+				service = "<img src= 'images/udacity.jpg' height='50px'>'";
 			}
 
 			else if (service == 'coursera') {
-				service = "<img src= 'images/coursera2.jpg' width='100px'>'";
+				service = "<img src= 'images/coursera2.jpg' width='50px'>'";
 			}
 			
 			var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
 			
 			var name = '<h2>'+value['name'] + "</h2>";
-			var shortDescription = value['shortDescription'];
+			var shortDescription = value['description'];
 			
 			var tablecell2 = '<td>' + name + ' ' + shortDescription + '</td>';
 			
-			var estimatedClassWorkload = value['estimatedClassWorkload'];
+			var estimatedClassWorkload = value['workload'];
 			
 			var tablecell3 = '<td>' + estimatedClassWorkload + '</td></tr>';
 
@@ -70,3 +58,11 @@ function run() {
 		$("body").append(table);
 	});
 }
+
+// function run() {
+// 	var json = $.getJSON('http://a.ashwinikhare.in:6060/getCourses', function(data){
+// 		if (window.console) console.log(data);		
+// 		
+// 
+// 	});
+// }
