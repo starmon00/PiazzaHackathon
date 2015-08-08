@@ -42,6 +42,14 @@ function run() {
 			var photo = "<img src='" + value['photo'] + "' width='300px'>'";
 			var service = value['service'];
 			
+			if (service == 'udacity'){
+				service = "<img src= 'images/udacity.jpg' width='100px'>'";
+			}
+
+			else if (service == 'coursera') {
+				service = "<img src= 'images/coursera2.jpg' width='100px'>'";
+			}
+			
 			var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
 			
 			var name = '<h2>'+value['name'] + "</h2>";
