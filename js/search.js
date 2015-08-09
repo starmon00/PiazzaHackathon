@@ -15,10 +15,16 @@ var getURLParameter = function getURLParameter(sParam) {
 
 function post() {
 	var key = getURLParameter('key');
-	console.log(key);
-	//replace var json = xxx with the below code later
-	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: getURLParameter('key'), level: getURLParameter('level'), hours_week: getURLParameter('hours')}, function( data ) {
+	var lvl = getURLParameter('level');
+	var hrs = getURLParameter('time');
+	// console.log(key);
 
+	//replace var json = xxx with the below code later
+	$.post( "http://a.ashwinikhare.in:6060/getCourses", { keywords: key, level: lvl, hours_week: hrs}, function( data ) {
+
+		var filters = "<div id='filters'><div class='center'><div class='menu'><ul><li> Keyword: " + key + "</li><li>Level: " + lvl + "</li><li>Hours/week: " + hrs + "</li></ul></div></div></div><p>";
+		$('body').append(filters);
+		
 		var parseddata = jQuery.parseJSON(data);
 		
 		if (parseddata.length == 0) {

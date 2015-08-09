@@ -3,6 +3,7 @@ html {
 }
 
 body {
+	font-family: arial, helvetica, sans-serif;
     width:100%;
 }
 
@@ -11,7 +12,6 @@ head{
 }
 
 h1 {
-	font-family: arial, helvetica, sans-serif;
 	text-align:center;
 }
 
@@ -113,11 +113,27 @@ table tr:hover td {
 	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
-ul {
+
+ul#header {
 
     background-color: rgb(240, 144, 80);
     list-style-type: none;
     margin: 0;
-    padding: ;
+    padding: 0;
 
 }
+
+#filters {
+	width:100%;
+	height:20px;
+	text-align:center;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.menu { padding:0; margin:0; font-size:.8em;}
+.menu ul { padding:0; margin:0; list-style:none; border:0;}
+.menu ul li { display:inline; margin: 10px; padding:10px; border:1px solid #FFA500; border-radius:25px; background-color:#FCE9DC; }
+.menu ul li a { margin:0; padding:13px 10px;  text-decoration:none; border:1px solid #000;}

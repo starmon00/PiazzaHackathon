@@ -10,7 +10,7 @@ function submit() {
 	} else {
 		var level = $("#level option:selected" ).text();
 		var time = $("#range").text();
-		window.location = 'searchResult.html?key=' + key +  '&level=' + $.trim(level)  + '&time=' + time;	
+		window.location = 'searchResult.html?key=' + key +  '&level=' + $.trim(level)  + '&time=' + $.trim(time);	
 	}	
 }
 
