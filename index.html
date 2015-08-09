@@ -9,7 +9,7 @@
 	<body>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				submit();
+				bindSubmit();
     		});
 		</script>
 		<div id="bg">
@@ -34,7 +34,7 @@
 			<label>
 				<span>Time Commitment:</span>
 				<table><tr><td><input type="range" min="1" max = "12" value="1" onchange="inputValue(this.value)" id="timeslider"></td>
-				<td><span id="range"> 1 </span></td></tr></table>
+				<td><span id="range"> 1 </span></td><td>hrs/wk</td></tr></table>
 			</label>
 			<br><br>
 			<label>
