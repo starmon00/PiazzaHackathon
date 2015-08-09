@@ -50,7 +50,7 @@ function post() {
 					service = "<img src= 'images/coursera2.jpg' width='50px'>'";
 				}
 			
-				var tablecell1 = '<tr><td>'+ photo + ' ' + service + '</td>';			
+				var tablecell1 = '<tr class="clickable-row" data-url="' + value['link'] + '"><td>'+ photo + ' ' + service + '</td>';			
 			
 				var name = '<h2>'+value['name'] + "</h2>";
 				var shortDescription = value['description'];
@@ -67,6 +67,13 @@ function post() {
 
 			table=table.concat('</table>');
 			$("body").append(table);
+			
+			$(".clickable-row").click(function() {
+				// console.log('test');
+				// console.log($(this));
+				// console.log($(this).data('url'));
+		        window.document.location = $(this).data('url');
+		    });
 		}
 	});
 }
